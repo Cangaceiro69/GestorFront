@@ -1,0 +1,31 @@
+# 🔹 Node
+node_modules/
+package-lock.json
+yarn.lock
+
+# 🔹 Env (MUITO IMPORTANTE 🔥)
+.env
+
+# 🔹 Logs
+logs/
+*.log
+npm-debug.log*
+
+# 🔹 Build
+dist/
+build/
+
+# 🔹 Vite
+.vite/
+
+# 🔹 OS
+.DS_Store
+Thumbs.db
+
+# 🔹 IDE
+.vscode/
+.idea/
+
+# 🔹 Temp
+tmp/
+temp/
