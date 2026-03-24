@@ -17,7 +17,7 @@ export default function Chat({ projeto }) {
     setLoading(true);
 
     const res = await fetch(
-      `http://localhost:3000/projetos/analise/${id}`
+      `https://gestorback.onrender.com/projetos/analise/${id}`
     );
     const data = await res.json();
 
@@ -35,7 +35,7 @@ export default function Chat({ projeto }) {
     setLoading(true);
 
     const res = await fetch(
-      "http://localhost:3000/projetos/analise-geral"
+      "https://gestorback.onrender.com/projetos/analise-geral"
     );
     const data = await res.json();
 
@@ -59,7 +59,7 @@ export default function Chat({ projeto }) {
 
   setLoading(true);
 
-  const res = await fetch("http://localhost:3000/projetos/chat", {
+  const res = await fetch("https://gestorback.onrender.com/projetos/chat", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
