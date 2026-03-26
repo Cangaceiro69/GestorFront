@@ -1,53 +1,19 @@
-import { useEffect, useState } from "react";
-import ProjectList from "../components/ProjectList";
 import Chat from "../components/Chat";
+import Lista from "../components/ProjectList"
 
 export default function Pagina() {
-  const [dark, setDark] = useState(false);
-
-  // 🔥 carregar tema salvo
-  useEffect(() => {
-    const temaSalvo = localStorage.getItem("tema");
-    if (temaSalvo === "dark") {
-      setDark(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
-  // 🔥 alternar tema
-  const toggleTema = () => {
-    if (dark) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("tema", "light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("tema", "dark");
-    }
-
-    setDark(!dark);
-  };
-
   return (
-    <div className="h-screen flex flex-col md:flex-row bg-white dark:bg-gray-900 text-black dark:text-white">
-
-      {/* Botão tema */}
-      <button
-        onClick={toggleTema}
-        className="absolute top-4 right-4 bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded"
-      >
-        {dark ? "☀️" : "🌙"}
-      </button>
-
-      {/* Chat */}
-      <div className="md:w-2/3 h-1/2 md:h-full border-b md:border-b-0 md:border-r dark:border-gray-700">
+    <div className="h-screen grid grid-cols-1 lg:grid-cols-3 dark:bg-gray-900">
+      
+      {/* 🔵 CHAT (ESQUERDA) */}
+      <div className="lg:col-span-2 border-r border-zinc-700 flex flex-col">
         <Chat />
       </div>
 
-      {/* Projetos */}
-      <div className="md:w-1/3 h-1/2 md:h-full">
-        <ProjectList />
-      </div>
-
+      {/* 🟣 PROJETOS (DIREITA) */}
+      <div className="p-4 overflow-y-auto">
+        <Lista />
+      </div>      
     </div>
   );
 }

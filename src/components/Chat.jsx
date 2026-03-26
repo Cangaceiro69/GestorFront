@@ -88,7 +88,7 @@ export default function Chat({ projeto }) {
 
       {/* Header */}
       <div className="p-4 border-b">
-        <h2 className="font-bold text-lg">
+        <h2 className="font-bold text-lg dark:text-white">
           {projeto
             ? `Projeto: ${projeto.nome}`
             : "Assistente de Projetos"}
